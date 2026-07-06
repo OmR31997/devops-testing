@@ -184,23 +184,29 @@ Description: To display the current state of the working directory and staging a
 14: git log
 Description: To view the commit history of the current branch.
 
-15: git stash
+15: git stash -m "stash commit"
 Description: To temporarily save uncommitted changes and revert the working directory to the last committed state.
 
-16: git revert
+16: git stash pop
+Description: To apply the most recently saved stash and remove it from the stash list.
+
+17: git revert
 Description: To create a new commit that undoes the changes made by a previous commit.
 
-17: git diff <commitId_1> <commitId_2>
+18: git diff <commitId_1> <commitId_2>
 Description: To show the differences between two commits.
 
-18: git reset --hard HEAD~1
+19: git reset --hard HEAD~1
 Description: To permanently remove the last commit from the current branch.
 
-19: git merge <BranchName>
+20: git merge <BranchName>
 Description: To merge changes from the specified branch into the current branch.
 
-20: git rebase <BranchName>
+21: git rebase <BranchName>
 Description: This is an alternative to git merge command. Should be used on local branches, since history does change and will be confusing for other team members. Does not create any new commit, and result in a cleaner history. The history is based on common commit of the two branches (base). The destination's branch commit pulled from it's "base" and "rebased" on the latest commit on the source branch.
+
+22: git push origin --delete checkout
+Description: To delete a remote branch named 'checkout' from the remote repository.
 
 ## Merge Confilict
 
