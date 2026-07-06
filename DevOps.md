@@ -138,3 +138,9 @@ Parallel Development
 Making Changes
 Parallel Development
 Syncing Repositories
+
+## Git Workflows
+
+- **Centralized Workflow**: All developers commit directly to the main branch on the remote repository
+- **Feature Branch Workflow**: Developers create separate branches for each feature and merge back to main when complete
+- **Forking Workflow**: Developers fork the repository, work independently, and submit pull requests to merge changes
