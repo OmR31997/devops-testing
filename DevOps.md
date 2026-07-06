@@ -145,8 +145,21 @@ Description: Unstage file from the staging area.
 2: git branch <BranchName> -> git branch b1
 Description: To create new branch.
 
-3: git checkout <ExistedBranchName>
+3: git checkout <ExistingBranchName>
 Description: To switch to the specified branch.
 
 4: git add .
 Description: To stage all changes in the working directory.
+
+5: git clone <url>
+Description: To create a local copy of a remote repository.
+
+6: git fetch <remote>
+Description: To download new commits from a remote repository without merging them.
+
+7: git merge <branch>
+Description: To integrate changes from a specified branch into the current branch.
+
+8: git push <remote> <branch>
+Description: To upload local commits to the specified branch on the remote repository.
+Description: To upload local commits to the specified branch on the remote repository.
