@@ -189,3 +189,27 @@ Description: To temporarily save uncommitted changes and revert the working dire
 
 16: git revert
 Description: To create a new commit that undoes the changes made by a previous commit.
+
+17: git diff <commitId_1> <commitId_2>
+Description: To show the differences between two commits.
+
+18: git reset --hard HEAD~1
+Description: To permanently remove the last commit from the current branch.
+
+19: git merge <BranchName>
+Description: To merge changes from the specified branch into the current branch.
+
+20: git rebase <BranchName>
+Description: This is an alternative to git merge command. Should be used on local branches, since history does change and will be confusing for other team members. Does not create any new commit, and result in a cleaner history. The history is based on common commit of the two branches (base). The destination's branch commit pulled from it's "base" and "rebased" on the latest commit on the source branch.
+
+## Merge Confilict
+
+Merge conflicts occur when we try to merge two branches, which have the same file updated by two different developers. Let's understand it using a scenario.
+
+## How to resolve Merge Confilict
+
+- **Step 1**: Identify conflicting files using `git status` or `git diff`
+- **Step 2**: Open the conflicting files and look for conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+- **Step 3**: Edit the file to keep the desired changes and remove the conflict markers
+- **Step 4**: Stage the resolved file using `git add <file>`
+- **Step 5**: Complete the merge by committing the changes with `git commit -m "Resolved merge conflict"`
