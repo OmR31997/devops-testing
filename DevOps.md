@@ -139,8 +139,14 @@ Making Changes
 Parallel Development
 Syncing Repositories
 
-## Git Workflows
+1: git restore --staged DevOps.md
+Description: Unstage file from the staging area.
 
-- **Centralized Workflow**: All developers commit directly to the main branch on the remote repository
-- **Feature Branch Workflow**: Developers create separate branches for each feature and merge back to main when complete
-- **Forking Workflow**: Developers fork the repository, work independently, and submit pull requests to merge changes
+2: git branch <BranchName> -> git branch b1
+Description: To create new branch.
+
+3: git checkout <ExistedBranchName>
+Description: To switch to the specified branch.
+
+4: git add .
+Description: To stage all changes in the working directory.
