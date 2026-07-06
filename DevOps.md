@@ -208,6 +208,12 @@ Description: This is an alternative to git merge command. Should be used on loca
 22: git push origin --delete checkout
 Description: To delete a remote branch named 'checkout' from the remote repository.
 
+git remote add origin https://github.com/OmR31997/devops-testing.git
+
+git remote -v
+
+git remote set-url origin https://github.com/OmR31997/new-repo.git
+
 ## Merge Confilict
 
 Merge conflicts occur when we try to merge two branches, which have the same file updated by two different developers. Let's understand it using a scenario.
@@ -219,3 +225,5 @@ Merge conflicts occur when we try to merge two branches, which have the same fil
 - **Step 3**: Edit the file to keep the desired changes and remove the conflict markers
 - **Step 4**: Stage the resolved file using `git add <file>`
 - **Step 5**: Complete the merge by committing the changes with `git commit -m "Resolved merge conflict"`
+
+A
