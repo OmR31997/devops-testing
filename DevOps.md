@@ -227,3 +227,7 @@ Merge conflicts occur when we try to merge two branches, which have the same fil
 - **Step 5**: Complete the merge by committing the changes with `git commit -m "Resolved merge conflict"`
 
 A
+
+B
+
+C
