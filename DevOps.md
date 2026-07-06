@@ -148,18 +148,44 @@ Description: To create new branch.
 3: git checkout <ExistingBranchName>
 Description: To switch to the specified branch.
 
-4: git add .
+4: git branch -D <BranchName>
+Description: To delete a branch.
+
+5: git add .
 Description: To stage all changes in the working directory.
 
-5: git clone <url>
+6: git clone <url>
 Description: To create a local copy of a remote repository.
 
-6: git fetch <remote>
+7: git fetch <remote>
 Description: To download new commits from a remote repository without merging them.
 
-7: git merge <branch>
+8: git merge <branch>
 Description: To integrate changes from a specified branch into the current branch.
 
 8: git push <remote> <branch>
 Description: To upload local commits to the specified branch on the remote repository.
-Description: To upload local commits to the specified branch on the remote repository.
+
+9: git branch -r
+Description: To list remote-tracking branches.
+
+10: git log origin/main
+Description: To view the commit history of the main branch on the remote repository.
+
+11: git pull origin <BranchName>
+Description: To fetch and merge changes from the specified branch on the remote repository.
+
+12: git reset --hard HEAD
+Description: To discard all local changes and reset the working directory to the last committed state.
+
+13: git status
+Description: To display the current state of the working directory and staging area.
+
+14: git log
+Description: To view the commit history of the current branch.
+
+15: git stash
+Description: To temporarily save uncommitted changes and revert the working directory to the last committed state.
+
+16: git revert
+Description: To create a new commit that undoes the changes made by a previous commit.
