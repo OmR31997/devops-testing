@@ -139,62 +139,114 @@ Making Changes
 Parallel Development
 Syncing Repositories
 
-1: git restore --staged DevOps.md
-Description: Unstage file from the staging area.
+## Getting Started
 
-2: git branch <BranchName> -> git branch b1
-Description: To create new branch.
+1: git init - Start a new repo
+Description: To initialize a new Git repository in the current directory.
 
-3: git checkout <ExistingBranchName>
-Description: To switch to the specified branch.
-
-4: git branch -D <BranchName>
-Description: To delete a branch.
-
-5: git add .
-Description: To stage all changes in the working directory.
-
-6: git clone <url>
+2: git clone <url> - Clone an existing repo
 Description: To create a local copy of a remote repository.
 
-7: git fetch <remote>
-Description: To download new commits from a remote repository without merging them.
+## Prepare to Commit
 
-8: git merge <branch>
-Description: To integrate changes from a specified branch into the current branch.
+3: git add <filePath> - Add untracked file or unstaged changes
+Description: To stage all changes in the working directory.
 
-8: git push <remote> <branch>
-Description: To upload local commits to the specified branch on the remote repository.
+4: git add . - Add all untracked files and unstaged changes
+Description: To stage all untracked files and unstaged changes.
 
-9: git branch -r
-Description: To list remote-tracking branches.
+5: git add -p - Choose which parts of a file to stage
+Description: To interactively choose which parts of a file to stage.
 
-10: git log origin/main
-Description: To view the commit history of the main branch on the remote repository.
+6: git mv <old> <new> - Move or rename a file
+Description: To move or rename a file in the working directory.
 
-11: git pull origin <BranchName>
-Description: To fetch and merge changes from the specified branch on the remote repository.
+7: git rm <filePath> - Delete file
+Description: To delete a file from the working directory.
 
-12: git reset --hard HEAD
-Description: To discard all local changes and reset the working directory to the last committed state.
+8: git rm --cached <filePath> - Tell Git to forget about a file without deleting it:
+Description: To remove a file from the repository while keeping it in the working directory.
 
-13: git status
+9: git reset <file> - Unstage file from the staging area
+Description: Unstage file from the staging area.
+
+10: git reset - Unstage everything
+Description: Unstage all files from the staging area.
+
+11: git status - Check what you added:
 Description: To display the current state of the working directory and staging area.
 
-14: git log
+## Make Commits
+
+1: git commit - Make a commit (and open text editor to write message)
+2: git commit -m 'message' - Make a commit
+3: git commit -am 'message' - Commit all unstaged changes
+
+## Move Between Branches
+
+1: git checkout <ExistingBranchName> or git switch <name> - Switch branches
+Description: To switch to the specified branch.
+
+2: git checkout -b <name> or git switch -c <name> - Create and checkout a branch:
+Description: To create a new branch and switch to it.
+
+3: git branch <BranchName> -> git branch b1 - Create new branch
+Description: To create new branch.
+
+4: git branch - List branches
+Description: To list all local branches.
+
+5: git branch --sort=-committerdate - List branches by most recently committed to
+Description: To list branches sorted by most recent commit date.
+
+7: git branch -D <name> - Force delete a branch
+Description: To delete a branch forcefully.
+
+## Diff Staged/Unstaged Changes
+
+1: git diff <commitId_1> <commitId_2>
+Description: To show the differences between two commits.
+
+2: git diff --staged - Diff just staged changes:
+Description: To show the differences between the staging area and the last commit.
+
+3: git diff - Diff just unstaged changes
+Description: To show the differences between the working directory and the staging area.
+
+## Diff Commits
+
+9: git fetch <remote>
+Description: To download new commits from a remote repository without merging them.
+
+10: git merge <branch>
+Description: To integrate changes from a specified branch into the current branch.
+
+11: git push <remote> <branch>
+Description: To upload local commits to the specified branch on the remote repository.
+
+12: git branch -r
+Description: To list remote-tracking branches.
+
+13: git log origin/main
+Description: To view the commit history of the main branch on the remote repository.
+
+14: git pull origin <BranchName>
+Description: To fetch and merge changes from the specified branch on the remote repository.
+
+15: git reset --hard HEAD
+Description: To discard all local changes and reset the working directory to the last committed state.
+
+16: git log
 Description: To view the commit history of the current branch.
 
-15: git stash -m "stash commit"
+17: git stash -m "stash commit"
 Description: To temporarily save uncommitted changes and revert the working directory to the last committed state.
 
-16: git stash pop
+18: git stash pop
 Description: To apply the most recently saved stash and remove it from the stash list.
 
-17: git revert
+19: git revert
 Description: To create a new commit that undoes the changes made by a previous commit.
-
-18: git diff <commitId_1> <commitId_2>
-Description: To show the differences between two commits.
 
 19: git reset --hard HEAD~1
 Description: To permanently remove the last commit from the current branch.
@@ -208,9 +260,17 @@ Description: This is an alternative to git merge command. Should be used on loca
 22: git push origin --delete checkout
 Description: To delete a remote branch named 'checkout' from the remote repository.
 
-## Merge Confilict
+23: git reset --soft HEAD~5
+Description: To reset the current branch to the previous commit while keeping the changes in the staging area (soft reset).
 
-Merge conflicts occur when we try to merge two branches, which have the same file updated by two different developers. Let's understand it using a scenario.
+24: git remote add origin <url>
+Description: To add a new remote repository with the given name and URL.
+
+25: git remote -v
+Description: To list all configured remote repositories and their URLs.
+
+26: git remote set-url origin <url>
+Description: To change the URL of an existing remote repository.
 
 ## How to resolve Merge Confilict
 
@@ -219,3 +279,12 @@ Merge conflicts occur when we try to merge two branches, which have the same fil
 - **Step 3**: Edit the file to keep the desired changes and remove the conflict markers
 - **Step 4**: Stage the resolved file using `git add <file>`
 - **Step 5**: Complete the merge by committing the changes with `git commit -m "Resolved merge conflict"`
+
+## Git Cherry-Pick-----------------------------------------------
+
+Cherry-picking allows you to apply the changes from a specific commit onto your current branch instead of merging.
+
+- **Command**: `git cherry-pick <commit-id>`
+- **Description**: Creates a new commit on the current branch with the changes from the specified commit, without merging the entire branch history.
+- **Use Case**: When you want to apply a specific bug fix or feature from one branch to another without merging all changes from that branch.
+- **Conflict Resolution**: If conflicts occur during cherry-pick, resolve them as described above and then use `git cherry-pick --continue` to proceed.
